@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gourmet Burger Creation</title>
+</head>
+
+<body>
+
+<a href="{{ url_for('selection', ID=ID, main='burger')}}">Burger</a>
+<a href="{{ url_for('selection', ID=ID, main='wrap')}}">Wrap</a>
+<a href="{{ url_for('sides', ID=ID)}}">Sides</a>
+<a href="{{ url_for('drinks', ID=ID)}}">Drinks</a>
+<a href="{{ url_for('order',ID = ID)}}">View/Confirm Order</a>
+<a href="{{ url_for('status_enter', ID = ID)}}">Check Order Status</a>
+<a href="{{ url_for('staff')}}">Staff</a>
+<a href="{{url_for('home')}}">Create New Order</a>
+
+<br>
+
+{% block body %}{% endblock %}
+
+</body>
+</html>

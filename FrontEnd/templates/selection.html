@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div>
+
+    <h3>Select a standard {{main}} from the menu below or select to create a custom {{main}}</h3>
+
+        {% if main == "burger" %}
+        <form method="POST">
+
+            <p>
+                <input type="radio" name="type" value="Python2 Burger" required/> Python2 Burger <br>
+                Double burger with 2 beef patties, cheddar cheese, BBQ sauce on muffin buns
+            </p>
+
+            <p>
+                <input type="radio" name="type" value="Python3 Burger"/> Python3 Burger <br>
+                Triple burger with 3 beef patties, cheddar cheese, BBQ sauce on sesame buns
+            </p>
+
+            <p>
+                <input type="radio" name="type" value="George's Burger"/> George's Burger <br>
+                Double burger with 1 beef patty, 1 chicken patty, lettuce, swiss cheese, onions, tomato sauce on sesame buns
+            </p>
+
+            <p>
+                <input type="radio" name="type" value="Custom Burger"/> Custom Burger <br>
+            </p>
+
+            <input type="submit" value="Next"/>
+
+        </form>
+
+        {% else %}
+        <form method="POST">
+
+            <p>
+                <input type="radio" name="type" value="Beef Wrap" required/> Beef Wrap <br>
+                Beef wrap with lettuce, tomatoes, onion, BBQ sauce
+            </p>
+
+            <p>
+                <input type="radio" name="type" value="Chicken Wrap"/> Chicken Wrap <br>
+                Chicken wrap with lettuce, tomatoes, onion, BBQ sauce
+            </p>
+
+            <p>
+                <input type="radio" name="type" value="Vegetarian Wrap"/> Vegetarian Wrap <br>
+                Vegetarian wrap with lettuce, tomatoes, onion, BBQ sauce
+            </p>
+
+            <p>
+                <input type="radio" name="type" value="Custom Wrap"/> Custom Wrap <br>
+            </p>
+
+            <input type="submit" value="Next"/>
+
+        </form>
+
+        {% endif %}
+
+
+</div>
+
+{% endblock %}

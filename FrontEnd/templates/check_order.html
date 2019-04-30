@@ -1,0 +1,12 @@
+{% extends 'base.html'%} {% block body %}
+
+{% if ready == True %}
+	<h3> Your order {{id}} is ready to be collected. </h3>
+{% elif ready == False %}
+	<h3> Your order {{id}} is not yet ready to be collected. </h3>
+{% else %}
+	<h3> {{ready}} </h3>
+{% endif %}
+
+
+{% endblock %}

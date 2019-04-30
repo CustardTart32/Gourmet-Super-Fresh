@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body%}
+<img src="https://easydrawingguides-7512.kxcdn.com/wp-content/uploads/2018/10/Soda-Can-10.png" width="100px" height="100px"/>
+
+<h2>Please select your drinks</h2>
+
+
+<div>
+    <form method = "POST">
+
+        {% for drink in drinklist%}
+        {{drink}} <input type="number" name ="{{drink}}" min = "0" value= "0"required/><br>
+        {% endfor %}
+
+
+        <br><button type="submit" name = "Submit">Next</button>
+
+    </form>
+
+</div>
+{% endblock %}

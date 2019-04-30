@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body%}
+<img src="https://easydrawingguides-7512.kxcdn.com/wp-content/uploads/2018/10/French-Fries-10.png" width="100px" height="100px"/>
+
+<h2>Please select your sides</h2>
+
+<div>
+
+    <form method = "POST">
+
+        {% for side in sidelist%}
+        {{side}} <input type="number" name ="{{side}}" min = "0" value= "0" required/><br>
+        {% endfor %}
+
+
+        <br><button type="submit" name = "Submit">Next</button>
+
+    </form>
+
+</div>
+{% endblock %}

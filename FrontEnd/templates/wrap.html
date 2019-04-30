@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% macro input(ingredient, min="0", max="5") %}
+    {{ingredient}}  <input type="number" name="{{ingredient}}" value="0" min="{{min}}" max="{{max}}" required /> <br> <br>
+{% endmacro %}
+
+
+{% block body %}
+
+<div>
+    <h2>Custom Wrap Creation</h2>
+    <p>Please add ingredients as desired </p>
+    <p>*Note a maximum of 5 of each ingredient is permitted, only 1 patty may be selected</p>
+
+    {% if errors %}
+        <p>
+        {% for error in errors %}
+            <font size="3" color="red">{{error}}</font> <br>
+        {% endfor %}
+        </p>
+    {% endif %}
+
+    <form method="POST">
+
+        {% for item in items %}
+
+            {% if "patty" in item %}
+            {{input(item, "0", "1")}}
+
+            {% elif "bun" not in item %}
+            {{input(item, "0", "5")}}
+
+            {% endif %}
+
+        {% endfor %}
+
+        <input type="submit" value="Confirm"/>
+
+    </form>
+
+
+</div>
+
+
+
+
+{% endblock %}

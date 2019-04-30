@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Order Alt Base</title>
+</head>
+
+<body>
+
+<a href="{{ url_for('home')}}">Make a New Order</a>
+<a href="{{ url_for('status_enter', ID = ID)}}">Check Order Status</a>
+
+<br>
+
+{% block body %} {% endblock %}
+
+</body>
+</html>

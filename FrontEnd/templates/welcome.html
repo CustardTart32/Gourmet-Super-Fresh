@@ -1,0 +1,27 @@
+{% if start %}
+{% extends "base.html" %}
+{% endif %}
+
+
+
+{% block body %}
+
+<div>
+
+    <h1>Welcome To Gourmet Meal Creation!</h1>
+
+    {% if start %}
+    Get started by selecting a category above to add items to your order!
+
+    {% else %}
+    <form method="POST">
+
+        <input type="submit" name="start" value="Get started" />
+
+    <form />
+    {% endif %}
+
+
+</div>
+
+{% endblock %}

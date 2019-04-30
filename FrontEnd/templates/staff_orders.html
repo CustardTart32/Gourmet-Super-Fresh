@@ -1,0 +1,27 @@
+{% extends 'staff.html' %}
+{% block body%}
+
+<h2>Orders to be completed : </h2>
+
+<div>
+
+  <form method = "POST">
+
+      <ul>
+      {% for order in orders%}
+        <li >Order ID: {{order.get_ID()}}
+       <input type = "radio" name = "Order" value = "{{order.get_ID()}}" required><br>
+        </li>
+          {% for item in order.get_order_list()%}
+              o {{item.get_name()}}<br>
+          {% endfor %}
+      {% endfor %}
+      </ul>
+      <input type = "submit" name = "Complete" value = "Complete">
+
+
+  </form>
+</div>
+
+
+{% endblock %}

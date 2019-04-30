@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% macro input(ingredient, value, min="0", max="5") %}
+    {{ingredient}}  <input type="number" name="{{ingredient}}" value="{{value}}" min="{{min}}" max="{{max}}" required/> <br> <br>
+{% endmacro %}
+
+
+{% block body %}
+
+<div>
+    <h2>Custom Burger Creation</h2>
+    <p>Please select a type of burger and add ingredients as desired </p>
+    <p>*Note a maximum of 5 of each ingredient is permitted, single burgers must have 2 buns and 1 patty, double burgers must have 3 buns and 2 patties, triple burgers must have 4 buns and 3 patties</p>
+
+    {% if errors %}
+        <p>
+        {% for error in errors %}
+            <font size="3" color="red">{{error}}</font> <br>
+        {% endfor %}
+        </p>
+    {% endif %}
+
+    <form method="POST">
+
+        <input type="radio" name="burger_tier" value="single" required/>Single Burger
+        <input type="radio" name="burger_tier" value="double"/>Double Burger
+        <input type="radio" name="burger_tier" value="triple"/>Triple Burger
+
+        <br> <br>
+
+        {% for item in items %}
+
+            {% if "bun" in item %}
+            {{input(item,"0", "0", "4")}}
+            {% elif "patty" in item %}
+            {{input(item, "0", "0", 3)}}
+            {% else %}
+            {{input(item, "0", "0", "5")}}
+            {% endif %}
+
+        {% endfor %}
+
+        <input type="submit" value="Confirm"/>
+
+    </form>
+
+
+</div>
+
+
+
+
+{% endblock %}

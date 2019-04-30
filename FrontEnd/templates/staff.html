@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Gourmet Super Fresh Staff Portal</title>
+</head>
+
+<h1>Gourmet Staff Portal</h1>
+
+<body>
+
+<a href="{{ url_for('home')}}">Customer Portal</a>
+<a href="{{ url_for('staff_orders')}}">Staff Orders</a>
+<a href="{{ url_for('staff_stocks')}}">Stock</a>
+
+<br>
+
+{% block body %}{% endblock %}
+
+</body>
+</html>
